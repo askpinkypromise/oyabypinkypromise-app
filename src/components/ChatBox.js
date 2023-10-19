@@ -9,10 +9,16 @@ import {
 import { db } from "../firebase";
 import Message from "./Message";
 import SendMessage from "./SendMessage";
+import { auth } from "../firebase";
+import { useAuth } from "../AuthContext";
 
 const ChatBox = () => {
+  console.log("hi");
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
+  const user = useAuth();
+
+  console.log("user", user);
 
   useEffect(() => {
     const q = query(
