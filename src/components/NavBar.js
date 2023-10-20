@@ -3,6 +3,7 @@ import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import logoImage from './logo.png';
 
 const NavBar = () => {
   const [user] = useAuthState(auth);
@@ -20,23 +21,9 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="nav-bar">
-      <h1>Oya By Pinky Promise</h1>
-      {user ? (
-        <button onClick={signOut} className="sign-out" type="button">
-          Sign Out
-        </button>
-      ) : (
-        <button className="sign-in" onClick={googleSignIn}>
-          {/* <img
-            onClick={googleSignIn}
-            src={GoogleSignin}
-            alt="sign in with google"
-            type="button"
-          /> */}
-        </button>
-      )}
-    </nav>
+    <div className="nav-bar">
+      <img src={logoImage} alt="" width={80} height={40} className="image-logo-nav"/>
+    </div>
   );
 };
 

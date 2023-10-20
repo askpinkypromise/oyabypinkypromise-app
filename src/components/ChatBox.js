@@ -11,9 +11,9 @@ import Message from "./Message";
 import SendMessage from "./SendMessage";
 import { auth } from "../firebase";
 import { useAuth } from "../AuthContext";
+import NavBar from "./NavBar";
 
 const ChatBox = () => {
-  console.log("hi");
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
   const user = useAuth();
@@ -42,6 +42,7 @@ const ChatBox = () => {
 
   return (
     <main className="chat-box">
+       {<NavBar/>}
       <div className="messages-wrapper">
         {messages?.map((message) => (
           <Message key={message.id} message={message} />

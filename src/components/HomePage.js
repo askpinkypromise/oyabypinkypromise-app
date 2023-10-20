@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { useAuth } from "../AuthContext";
 import { auth } from "../firebase";
+import NavBar from "./NavBar";
+import backgroundImage from './onboarding.png';
 
 const HomePage = () => {
   const user = useAuth();
@@ -14,27 +16,25 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleClickChat = () => {
-    console.log("HANDLE CLICK");
     navigate("/chat");
   };
 
   const handleClickContent = () => {
-    console.log("HANDLE CLICK");
     navigate("/mediacontent");
   };
 
   return (
-    <main className="welcome">
-      <h1>
-        {user ? (
-          <div>
-            <Card.Text>Welcome, {user.email}</Card.Text>
-          </div>
-        ) : (
-          <Card.Text>Welcome!</Card.Text>
-        )}{" "}
-      </h1>
-      <Card
+    <div className="home-page">
+      {<NavBar/>}
+      <div className="heading-home-page">
+        <p> Hi, Akanksha!</p>
+        <p> Welcome to Oya!</p>
+        <div className="image-home-page">
+          <img src={backgroundImage} alt="" width={200} height={200} className="logo-home"/>
+        </div>
+      </div>
+      <p className="why-text"> Why here?</p>
+        <Card
         style={{
           width: "18rem",
           backgroundColor: "white",
@@ -42,12 +42,14 @@ const HomePage = () => {
           borderRadius: "10px",
           margin: "20px",
         }}
+        className="home-page-card col-md-8"
         onClick={handleClickChat}
       >
-        <Card.Body>
-          <Card.Text>Have questions? Chat with a Counselor.</Card.Text>
+        <Card.Body className="ques-card">
+          <Card.Img src={backgroundImage} alt="" width={50} height={50}/>
+          <Card.Text style={{ paddingLeft: "10px"}}>Have questions? Chat with a Counselor.</Card.Text>
         </Card.Body>
-      </Card>
+      </Card>      
       <Card
         style={{
           width: "18rem",
@@ -56,13 +58,15 @@ const HomePage = () => {
           borderRadius: "10px",
           margin: "20px",
         }}
+        className="home-page-card"
         onClick={handleClickContent}
       >
-        <Card.Body>
-          <Card.Text>Discover and Learn</Card.Text>
+        <Card.Body className="ques-card">
+          <Card.Img src={backgroundImage} alt="" width={50} height={50}/>
+          <Card.Text style={{ paddingLeft: "10px"}}>Discover and Learn</Card.Text>
         </Card.Body>
       </Card>
-    </main>
+    </div>
   );
 };
 

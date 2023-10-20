@@ -38,8 +38,8 @@ const FirestoreData = () => {
                 width="560"
                 height="315"
                 src={item.link}
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
               ></iframe>
             </div>
           </li>
