@@ -96,6 +96,7 @@ input {
 .messages-wrapper {
   padding: 30px;
   margin-bottom: 60px;
+  margin-top: 40px;
 }
 .chat-bubble {
   border-radius: 20px 20px 20px 0;
@@ -113,7 +114,7 @@ input {
   margin-left: auto;
   border-radius: 20px 20px 0 20px;
   background-color: #fff;
-  box-shadow: -2px 2px 1px 1px #88dded;
+  box-shadow: 1px 1px 1px 1px pink;
 }
 .chat-bubble__left {
   width: 35px;
@@ -141,7 +142,7 @@ input {
   bottom: 0px;
   width: 100%;
   padding: 20px 30px;
-  background-color: #4c768d;
+  background-color: #f5d1cf;
   display: flex;
 }
 .send-message > input {
@@ -166,9 +167,9 @@ input {
   height: 40px;
   padding: 5px 10px;
   border-radius: 0 5px 5px 0;
-  color: #242443;
+  color: white;
   border: 1px solid #7cc5d9;
-  background-color: #7cc5d9;
+  background-color: #ff424c;
   font-weight: 600;
 }
 
@@ -264,3 +265,9 @@ input {
 .ques-card {
   display: flex;
 }
+
+/* .inputText {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+} */

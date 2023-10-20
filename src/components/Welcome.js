@@ -53,6 +53,7 @@ const Welcome = () => {
               name="username"
               value={username}
               placeholder="Enter your username here"
+              className="inputText"
               onChange={(e) => setUsername(e.target.value)}
             />
           <br />
@@ -64,6 +65,7 @@ const Welcome = () => {
               name="password"
               value={password}
               placeholder="Enter your password here"
+              className="inputText"
               onChange={(e) => setPassword(e.target.value)}
             />
           <br />
